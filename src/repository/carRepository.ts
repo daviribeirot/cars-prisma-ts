@@ -16,11 +16,11 @@ async function getCarWithLicensePlate(licensePlate: string) {
 }
 
 async function createCar(model: string, licensePlate: string, year: number, color: string) {
-  await prisma.cars.create({data: {model, licensePlate, year, color}});
+  return await prisma.cars.create({data: {model, licensePlate, year, color}});
 }
 
 async function deleteCar(id: number) {
-  await prisma.cars.delete({where: {id}});
+  return await prisma.cars.delete({where: {id}});
 }
 
 const carRepository = {
